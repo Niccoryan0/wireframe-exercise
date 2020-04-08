@@ -1,0 +1,121 @@
+/* CSS FROM TOP TO BOTTOM, HTML IS ALREADY FINISHED */
+*{
+  /* Diagnostic tool, shows the boxes outlined to understand their locations */
+  /* outline: 1px dotted red; */
+  /* Tell man bear pig's order and padding to fit inside the width of subtract from the width */
+  box-sizing: border-box;
+}
+
+header {
+  /* We're adding this early, bad practice but used to make a point, the floating items in the header makes the height of the parent element 0, so we need to give it a new height */
+  background-color: rgb(58, 58, 58);
+  height: 100px;
+  color: rgb(160, 148, 148)
+}
+
+nav {
+  /* Center nav and give the width they want it to be */
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: sans-serif;
+}
+
+nav img {
+  /* Get the image floating beside the nav items */
+  float: left;
+  /* Space it appropriately, we are guesstimating it to be 15px from the provided wireframes and 30px from the nav items */
+  margin-top: 15px;
+  margin-right: 30px;
+}
+
+nav ul li {
+  /* float nav items left to right */
+  float:left;
+  /* Space the list items from the top and each other, play around with these in the dev tools on the live server to get a good estimate for centering them */
+  margin-top: 42px;
+  margin-right: 104px;
+}
+
+main {
+  /* Space the main out from the header */
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  overflow: hidden;
+}
+
+main > ul {
+ /* Carot stands for direct child to make sure we're only getting a ul directly in the main */
+ margin-top: 30px;
+ overflow: hidden;
+}
+
+main > ul > li {
+  float:left;
+  margin-right: 30px;
+}
+
+main > ul > li:last-child {
+  /* Remove the margin on the further right list item so it can go to the edge of the box */
+  margin-right: 0px;
+}
+
+section {
+  /* This alone won't work, due to the floats of the list items, this doesn't give it the marign we want until we added overflow:hidden to the main > ul styling */
+  margin-top: 30px;
+  height: 400px;
+}
+
+main > section > img {
+  float:left;
+}
+
+article {
+  /* Nicholas hates floating left and right in the same document, so let's not just take that option, so we started the img styling AFTER this one, to float that left too */
+  float: left;
+  /* Padding messed up the width, so we're adding box-sizing to the * styling above */
+  width: 50%;
+  padding-left: 30px;
+  height: 100%;
+  font-family: Arial;
+}
+
+article h2 {
+  font-size: 25px;
+}
+
+article p {
+  height:81%;
+  /* Overflow set to auto to add scroll bar */
+  overflow: auto;
+  margin-top:5px;
+  font-style: italic;
+  font-size: 17px;
+  line-height: 25px;
+}
+
+button {
+  background: #111;
+  color: #fff;
+  margin-top: 7px;
+  border: none;
+  height: 10%;
+  width: 40%;
+  padding: 6px 20px;
+  font-weight: bold;
+  font-size: medium;
+}
+
+button:hover {
+  /* Changes the color when you're hovering over it */
+  background:red;
+}
+
+footer {
+  margin-top: 30px;
+  background-color: rgb(58, 58, 58);
+  height: 100px;
+}
+/* rule for floats: float the child, and overflow:hidden the parent! */
